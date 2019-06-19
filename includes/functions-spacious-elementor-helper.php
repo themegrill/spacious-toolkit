@@ -74,3 +74,45 @@ function spacious_toolkit_elementor_categories() {
 
 	return $output;
 }
+
+/**
+ * Return the values of all the tags of the posts
+ * present in the site
+ *
+ * @return array of tag ids and its respective names
+ *
+ * @since 1.0.0
+ */
+function spacious_toolkit_elementor_tags() {
+	$output = array();
+	$tags   = get_tags();
+
+	foreach ( $tags as $tag ) {
+		$output[ $tag->term_id ] = $tag->name;
+	}
+
+	return $output;
+}
+
+/**
+ * Return the values of all the authors of the posts
+ * present in the site
+ *
+ * @return array of author ids and its respective names
+ *
+ * @since 1.0.0
+ */
+function spacious_toolkit_elementor_authors() {
+	$output  = array();
+	$authors = get_users(
+		array(
+			'who' => 'authors',
+		)
+	);
+
+	foreach ( $authors as $author ) {
+		$output[ $author->ID ] = $author->display_name;
+	}
+
+	return $output;
+}
