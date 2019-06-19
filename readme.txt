@@ -27,8 +27,11 @@ Get free support at http://themegrill.com/support-forum/
 * The plugin currently only supports Spacious theme.
 
 == Changelog ==
+= TBD =
+* Tweak - Added function to retrieve post tags and authors.
+
 = 1.0.1 - 08/06/2018 =
-* Fix - spacious_entry_meta php error. 
+* Fix - spacious_entry_meta php error.
 
 = 1.0.0 - 02/03/2018 =
 * Initial Public Release
