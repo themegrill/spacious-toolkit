@@ -24,6 +24,10 @@
 use Elementor\SPT_CTA_1;
 use Elementor\Scheme_Color;
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Background;
+use ELementor\Group_Control_Typography;
+use ELementor\Group_Control_Border;
+use Elementor\Scheme_Typography;
 
 // Exit if it is accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -79,3 +83,138 @@ $instance->add_control(
 );
 
 $instance->end_controls_section();
+
+// Style for CTA box.
+$instance->start_controls_section(
+	'section_call_to_action_1_style',
+	array(
+		'label' => __( 'Call To Action Box', 'spacious-toolkit' ),
+		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Background::get_type(),
+	array(
+		'name'     => 'call_to_action_background',
+		'label'    => __( 'Background', 'spacious-toolkit' ),
+		'types'    => array( 'classic', 'gradient' ),
+		'selector' => '{{WRAPPER}} .call-to-action',
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Background::get_type(),
+	array(
+		'name'      => 'call_to_action_background_overlay',
+		'label'     => __( 'Background Overlay', 'spacious-toolkit' ),
+		'types'     => array( 'classic', 'gradient' ),
+		'selector' => '{{WRAPPER}} .call-to-action',
+		'condition' => array(
+			'background' => array( 'classic' ),
+		),
+	)
+);
+
+$instance->add_responsive_control(
+	'call_to_action_box_padding',
+	array(
+		'label' => __( 'Padding', 'spacious' ),
+		'type' => \Elementor\Controls_Manager::DIMENSIONS,
+		'size_units' => array( 'px', 'em', '%' ),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		),
+	)
+);
+
+$instance->end_controls_section();
+
+// Style for title.
+$instance->start_controls_section(
+	'section_call_to_action_1_title_style',
+	array(
+		'label' => __( 'Title', 'spacious-toolkit' ),
+		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+	)
+);
+
+$instance->add_control(
+	'call_to_action_1_title_color',
+	array(
+		'label'     => esc_html__( 'Color', 'spacious-toolkit' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#424143',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action .call-to-action__title' => 'color: {{VALUE}}',
+
+		),
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Typography::get_type(),
+	array(
+		'name'     => 'call_to_action_1_title_typography',
+		'label'    => __( 'Typography', 'spacious' ),
+		'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
+		'selector' => '{{WRAPPER}} .call-to-action .call-to-action__title',
+	)
+);
+
+$instance->add_responsive_control(
+	'call_to_action_title_padding',
+	array(
+		'label' => __( 'Padding', 'spacious' ),
+		'type' => \Elementor\Controls_Manager::DIMENSIONS,
+		'size_units' => array( 'px', 'em', '%' ),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action .call-to-action__title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		),
+	)
+);
+
+$instance->end_controls_section();
+
+// Style for content.
+$instance->start_controls_section(
+	'section_call_to_action_1_content_style',
+	array(
+		'label' => __( 'Content', 'spacious-toolkit' ),
+		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+	)
+);
+
+$instance->add_control(
+	'call_to_action_1_content_color',
+	array(
+		'label'     => esc_html__( 'Color', 'spacious-toolkit' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#67666a',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action .call-to-action__content' => 'color: {{VALUE}}',
+
+		),
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Typography::get_type(),
+	array(
+		'name'     => 'call_to_action_1_content_typography',
+		'label'    => __( 'Typography', 'spacious' ),
+		'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
+		'selector' => '{{WRAPPER}} .call-to-action .call-to-action__content',
+	)
+);
+
+$instance->end_controls_section();
+
