@@ -174,6 +174,18 @@ $instance->add_group_control(
 	)
 );
 
+$instance->add_responsive_control(
+	'counter_1number_margin',
+	array(
+		'label' => __( 'Margin', 'spacious-toolkit' ),
+		'type' => \Elementor\Controls_Manager::DIMENSIONS,
+		'size_units' => array( 'px', 'em', '%' ),
+		'selectors' => array(
+			'{{WRAPPER}} .counter .counter__number' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		),
+	)
+);
+
 $instance->end_controls_section();
 
 // For divider.
