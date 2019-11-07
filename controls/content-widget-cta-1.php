@@ -28,6 +28,7 @@ use Elementor\Group_Control_Background;
 use ELementor\Group_Control_Typography;
 use ELementor\Group_Control_Border;
 use Elementor\Scheme_Typography;
+use Elementor\Group_Control_Box_Shadow;
 
 // Exit if it is accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -103,19 +104,6 @@ $instance->add_group_control(
 	)
 );
 
-$instance->add_group_control(
-	Group_Control_Background::get_type(),
-	array(
-		'name'      => 'call_to_action_background_overlay',
-		'label'     => __( 'Background Overlay', 'spacious-toolkit' ),
-		'types'     => array( 'classic', 'gradient' ),
-		'selector' => '{{WRAPPER}} .call-to-action',
-		'condition' => array(
-			'background' => array( 'classic' ),
-		),
-	)
-);
-
 $instance->add_responsive_control(
 	'call_to_action_box_padding',
 	array(
@@ -124,6 +112,43 @@ $instance->add_responsive_control(
 		'size_units' => array( 'px', 'em', '%' ),
 		'selectors' => array(
 			'{{WRAPPER}} .call-to-action' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		),
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Border::get_type(),
+	array(
+		'name'           => 'call_to_action_box_border',
+		'selector'       => '{{WRAPPER}} .call-to-action',
+		'separator'      => 'before',
+		'fields_options' => array(
+			'border' => array(
+				'default' => 'solid'
+			),
+			'width'  => array(
+				'default' => array(
+					'top'    => '1',
+					'right'  => '1',
+					'bottom' => '1',
+					'left'   => '1',
+				)
+			),
+			'color'  => array(
+				'default' => '#e5e4e6'
+			)
+		)
+	)
+);
+
+$instance->add_responsive_control(
+	'call_to_action_box_radius',
+	array(
+		'label'      => __( 'Border Radius', 'spacious' ),
+		'type'       => Controls_Manager::DIMENSIONS,
+		'size_units' => array( 'px', '%', 'em' ),
+		'selectors'  => array(
+			'{{WRAPPER}} .call-to-action' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		),
 	)
 );
@@ -213,6 +238,181 @@ $instance->add_group_control(
 		'label'    => __( 'Typography', 'spacious' ),
 		'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
 		'selector' => '{{WRAPPER}} .call-to-action .call-to-action__content',
+	)
+);
+
+$instance->add_responsive_control(
+	'call_to_action_content_margin',
+	array(
+		'label' => __( 'Margin', 'spacious' ),
+		'type' => \Elementor\Controls_Manager::DIMENSIONS,
+		'size_units' => array( 'px', 'em', '%' ),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action .call-to-action__content p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		),
+	)
+);
+
+$instance->end_controls_section();
+
+// Style for Button.
+$instance->start_controls_section(
+	'section_call_to_action_1_button_style',
+	array(
+		'label' => __( 'Button', 'spacious-toolkit' ),
+		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+	)
+);
+
+$instance->add_responsive_control(
+	'call_to_action_button_padding',
+	array(
+		'label' => __( 'Padding', 'spacious' ),
+		'type' => \Elementor\Controls_Manager::DIMENSIONS,
+		'size_units' => array( 'px', 'em', '%' ),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action-right .call-to-action__button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		),
+	)
+);
+
+$instance->add_responsive_control(
+	'call_to_action_button_margin',
+	array(
+		'label' => __( 'Margin', 'spacious' ),
+		'type' => \Elementor\Controls_Manager::DIMENSIONS,
+		'size_units' => array( 'px', 'em', '%' ),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action-right .call-to-action__button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		),
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Typography::get_type(),
+	array(
+		'name'     => 'call_to_action_1_button_typography',
+		'label'    => __( 'Typography', 'spacious' ),
+		'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
+		'selector' => '{{WRAPPER}} .call-to-action-right .call-to-action__button',
+	)
+);
+
+$instance->start_controls_tabs(
+	'button_style_tabs'
+);
+
+$instance->start_controls_tab(
+	'style_normal_tab',
+	array(
+		'label' => __( 'Normal', 'spacious-toolkit' ),
+	)
+);
+
+$instance->add_control(
+	'button_text_color',
+	array(
+		'label'     => esc_html__( 'Color', 'spacious' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#ffffff',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action-right .call-to-action__button' => 'color: {{VALUE}}',
+		),
+	)
+);
+
+$instance->add_control(
+	'button_background_color',
+	array(
+		'label'     => esc_html__( 'Background', 'spacious' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#0FBE7C',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action-right .call-to-action__button' => 'background-color: {{VALUE}}',
+		),
+	)
+);
+
+$instance->end_controls_tab();
+
+$instance->start_controls_tab(
+	'style_hover_tab',
+	array(
+		'label' => __( 'Hover', 'spacious-toolkit' ),
+	)
+);
+
+$instance->add_control(
+	'button_text_hover_color',
+	array(
+		'label'     => esc_html__( 'Color', 'spacious' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#ffffff',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action-right .call-to-action__button:hover' => 'color: {{VALUE}}',
+		),
+	)
+);
+
+$instance->add_control(
+	'button_background_hover_color',
+	array(
+		'label'     => esc_html__( 'Background', 'spacious' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#0FBE7C',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .call-to-action-right .call-to-action__button:hover' => 'background-color: {{VALUE}}',
+		),
+	)
+);
+
+$instance->end_controls_tab();
+
+$instance->end_controls_tabs();
+
+$instance->add_group_control(
+	Group_Control_Border::get_type(),
+	array(
+		'name'      => 'button_border',
+		'selector'  => '{{WRAPPER}} .call-to-action-right .call-to-action__button',
+		'separator' => 'before',
+	)
+);
+
+$instance->add_responsive_control(
+	'button_radius',
+	array(
+		'label'      => __( 'Border Radius', 'spacious' ),
+		'type'       => Controls_Manager::DIMENSIONS,
+		'size_units' => array( 'px', '%', 'em' ),
+		'selectors'  => array(
+			'{{WRAPPER}} .call-to-action-right .call-to-action__button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		),
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Box_Shadow::get_type(),
+	array(
+		'name' => 'button_box_shadow',
+		'label' => __( 'Box Shadow', 'spacious-toolkit' ),
+		'selector' => '{{WRAPPER}} .call-to-action-right .call-to-action__button',
 	)
 );
 
