@@ -23,6 +23,10 @@
 
 use Elementor\SPT_TITLE_1;
 use Elementor\Controls_Manager;
+use ELementor\Group_Control_Typography;
+use Elementor\Scheme_Typography;
+use ELementor\Group_Control_Border;
+use Elementor\Scheme_Color;
 
 // Exit if it is accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -99,6 +103,108 @@ $instance->add_control(
 			'style_one'   => esc_html__( 'Style 1', 'spacious-toolkit' ),
 			'style_two'   => esc_html__( 'Style 2', 'spacious-toolkit' ),
 			'style_three' => esc_html__( 'Style 3', 'spacious-toolkit' ),
+		),
+	)
+);
+
+$instance->end_controls_section();
+
+// Title Style
+$instance->start_controls_section(
+	'section_styling_title',
+	array(
+		'label' => __( 'Title', 'spacious' ),
+		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+	)
+);
+
+$instance->add_control(
+	'title_color',
+	array(
+		'label'     => esc_html__( 'Color', 'spacious' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#444444',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .spacious-title .widget-title' => 'color: {{VALUE}}',
+		),
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Typography::get_type(),
+	array(
+		'name'     => 'title_typography',
+		'label'    => __( 'Typography', 'spacious' ),
+		'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
+		'selector' => '{{WRAPPER}} .spacious-title .widget-title',
+	)
+);
+
+$instance->end_controls_section();
+
+// Description Style
+$instance->start_controls_section(
+	'section_styling_description',
+	array(
+		'label' => __( 'Description', 'spacious' ),
+		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+	)
+);
+
+$instance->add_control(
+	'description_color',
+	array(
+		'label'     => esc_html__( 'Color', 'spacious' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#999999',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .spacious-title .widget-desc' => 'color: {{VALUE}}',
+		),
+	)
+);
+
+$instance->add_group_control(
+	Group_Control_Typography::get_type(),
+	array(
+		'name'     => 'description_typography',
+		'label'    => __( 'Typography', 'spacious' ),
+		'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
+		'selector' => '{{WRAPPER}} .spacious-title .widget-desc',
+	)
+);
+
+$instance->end_controls_section();
+
+// Divider Style
+$instance->start_controls_section(
+	'section_styling_divider',
+	array(
+		'label' => __( 'Divider', 'spacious' ),
+		'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+	)
+);
+
+$instance->add_control(
+	'divider_color',
+	array(
+		'label'     => esc_html__( 'Color', 'spacious' ),
+		'type'      => Controls_Manager::COLOR,
+		'default'   => '#999999',
+		'scheme'    => array(
+			'type'  => Scheme_Color::get_type(),
+			'value' => Scheme_Color::COLOR_1,
+		),
+		'selectors' => array(
+			'{{WRAPPER}} .spacious-title.style_two .widget-title::after' => 'background-color: {{VALUE}}',
+			'{{WRAPPER}} .spacious-title.style_three .widget-desc span::after' => 'background-color: {{VALUE}}',
 		),
 	)
 );
