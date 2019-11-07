@@ -330,7 +330,7 @@ $instance->add_control(
 	array(
 		'label'     => esc_html__( 'Background', 'spacious' ),
 		'type'      => Controls_Manager::COLOR,
-		'default'   => '#0FBE7C',
+		'default'   => '#78b865',
 		'scheme'    => array(
 			'type'  => Scheme_Color::get_type(),
 			'value' => Scheme_Color::COLOR_1,
@@ -371,7 +371,7 @@ $instance->add_control(
 	array(
 		'label'     => esc_html__( 'Background', 'spacious' ),
 		'type'      => Controls_Manager::COLOR,
-		'default'   => '#0FBE7C',
+		'default'   => '#78b865',
 		'scheme'    => array(
 			'type'  => Scheme_Color::get_type(),
 			'value' => Scheme_Color::COLOR_1,
