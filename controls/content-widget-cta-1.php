@@ -237,7 +237,7 @@ $instance->add_group_control(
 		'name'     => 'call_to_action_1_content_typography',
 		'label'    => __( 'Typography', 'spacious' ),
 		'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
-		'selector' => '{{WRAPPER}} .call-to-action .call-to-action__content',
+		'selector' => '{{WRAPPER}} .call-to-action .call-to-action__content p',
 	)
 );
 
