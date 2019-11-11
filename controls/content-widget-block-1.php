@@ -127,30 +127,3 @@ $instance->start_controls_section(
 		'tab'   => Controls_Manager::TAB_STYLE,
 	)
 );
-
-// Column Layout
-$instance->add_control(
-	'layout',
-	array(
-		'label'   => esc_html__( 'Layout', 'spacious-toolkit' ),
-		'type'    => Controls_Manager::CHOOSE,
-		'default' => 'two_column',
-		'options' => array(
-			'one_column'   => array(
-				'icon' => 'fa fa-columns',
-			),
-			'two_column'   => array(
-				'icon' => 'fa fa-columns',
-			),
-			'three_column' => array(
-				'icon' => 'fa fa-columns',
-			),
-			'four_column'  => array(
-				'icon' => 'fa fa-columns',
-			),
-
-		),
-	)
-);
-
-$instance->end_controls_section();
