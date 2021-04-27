@@ -3,7 +3,7 @@
  * Plugin Name: Spacious Toolkit
  * Plugin URI: https://themegrill.com/themes/spacious/
  * Description: Spacious Toolkit is a companion for Spacious WordPress theme by ThemeGrill
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: ThemeGrill
  * Author URI: https://themegrill.com/
  * License: GPLv3 or later
