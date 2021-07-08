@@ -2,8 +2,8 @@
 Contributors: themegrill
 Tags: theme, spacious, toolkit, themegrill
 Requires at least: 4.5
-Tested up to: 5.7.1
-Stable tag: 1.0.3
+Tested up to: 5.7
+Stable tag: 1.0.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -27,8 +27,9 @@ Get free support at http://themegrill.com/support-forum/
 * The plugin currently only supports Spacious theme.
 
 == Changelog ==
-== 1.0.3 - 27-04-2021 ==
-* Tweak - Updated `Tested up to` to 5.7.1.
+
+== 1.0.4 - 08-07-2021 ==
+* Tweak - Updated `Tested up to` to 5.7.
 
 = 1.0.2 - 19/06/2019 =
 * Tweak - Added function to retrieve post tags and authors.
