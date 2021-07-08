@@ -9,6 +9,10 @@
   },
   "license": "GPL-3.0+",
   "main": "Gruntfile.js",
+  "scripts": {
+    "build": "grunt",
+    "build-watch": "grunt watch"
+  },
   "devDependencies": {
     "grunt": "~1.0.1",
     "grunt-checktextdomain": "~1.0.1",
@@ -23,7 +27,7 @@
     "node-bourbon": "~4.2.8"
   },
   "engines": {
-    "node": ">=0.8.0",
-    "npm": ">=1.1.0"
+    "node": ">=8.9.3",
+    "npm": ">=5.5.1"
   }
 }
