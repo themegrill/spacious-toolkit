@@ -106,7 +106,7 @@ class SPT_COUNTER_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function () {
+	protected function content_template() {
 		spacious_get_preview_template( 'content-widget-counter-1.php', $args = array( 'instance' => $this ) );
 	}
 
