@@ -28,6 +28,10 @@ Get free support at http://themegrill.com/support-forum/
 
 == Changelog ==
 
+== 1.0.5 - 03-28-2022 ==
+* Fix - _register_controls is deprecated.
+* Fix - _content_template is deprecated.
+
 == 1.0.4 - 08-07-2021 ==
 * Tweak - Updated `Tested up to` to 5.7.
 

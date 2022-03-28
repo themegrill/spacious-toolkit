@@ -70,7 +70,7 @@ class SPT_GRID_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		spacious_get_controls_template( 'content-widget-grid-1.php', $args = array( 'instance' => $this ) );
 	}
 

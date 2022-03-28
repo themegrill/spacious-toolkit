@@ -70,7 +70,7 @@ class SPT_TITLE_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_inline_editing_attributes( 'title' );
 		$this->add_inline_editing_attributes( 'description' );
 		spacious_get_controls_template( 'content-widget-title-1.php', $args = array( 'instance' => $this ) );
@@ -94,7 +94,7 @@ class SPT_TITLE_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _content_template() {
+	protected function content_template() {
 		spacious_get_preview_template( 'content-widget-title-1.php', $args = array( 'instance' => $this ) );
 	}
 }

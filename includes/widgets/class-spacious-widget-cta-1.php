@@ -70,7 +70,7 @@ class SPT_CTA_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_inline_editing_attributes( 'title' );
 		$this->add_inline_editing_attributes( 'content' );
 		$this->add_inline_editing_attributes( 'button_text' );
@@ -95,7 +95,7 @@ class SPT_CTA_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _content_template() {
+	protected function content_template() {
 		spacious_get_preview_template( 'content-widget-cta-1.php', $args = array( 'instance' => $this ) );
 	}
 

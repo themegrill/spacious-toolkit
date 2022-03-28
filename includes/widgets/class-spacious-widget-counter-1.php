@@ -83,7 +83,7 @@ class SPT_COUNTER_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_inline_editing_attributes( 'title' );
 		spacious_get_controls_template( 'content-widget-counter-1.php', $args = array( 'instance' => $this ) );
 	}
@@ -106,7 +106,7 @@ class SPT_COUNTER_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _content_template() {
+	protected function () {
 		spacious_get_preview_template( 'content-widget-counter-1.php', $args = array( 'instance' => $this ) );
 	}
 

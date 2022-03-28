@@ -70,7 +70,7 @@ class SPT_TEAM_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->add_inline_editing_attributes( 'member_name' );
 		$this->add_inline_editing_attributes( 'member_designation' );
 		$this->add_inline_editing_attributes( 'member_description' );
@@ -95,7 +95,7 @@ class SPT_TEAM_1 extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _content_template() {
+	protected function content_template() {
 		spacious_get_preview_template( 'content-widget-team-1.php', $args = array( 'instance' => $this ) );
 	}
 
