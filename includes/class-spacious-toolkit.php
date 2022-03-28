@@ -26,7 +26,7 @@ final class Spacious_Toolkit {
 	 *
 	 * @var string
 	 */
-	public $version = '1.0.4';
+	public $version = '1.0.5';
 
 	/**
 	 * The single instance of the class.
