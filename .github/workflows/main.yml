@@ -8,7 +8,15 @@ jobs:
     name: New tag
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - name: checkout code
+      uses: actions/checkout@v3
+      with: 
+        submodules: recursive
+    - name: setup nodejs
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14.17.5'
+
     - name: Build
       run: |
         rm -rf node-modules
