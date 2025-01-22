@@ -26,7 +26,7 @@ final class Spacious_Toolkit {
 	 *
 	 * @var string
 	 */
-	public $version = '1.0.5';
+	public $version = '1.0.6';
 
 	/**
 	 * The single instance of the class.
@@ -96,20 +96,29 @@ final class Spacious_Toolkit {
 	 * @since 1.0.0
 	 */
 	private function init_hooks() {
-		register_activation_hook( SPACIOUS_TOOLKIT_PLUGIN_FILE, array(
-			'SPT_Install',
-			'install',
-		) );
+		register_activation_hook(
+			SPACIOUS_TOOLKIT_PLUGIN_FILE,
+			array(
+				'SPT_Install',
+				'install',
+			)
+		);
 
-		add_action( 'init', array(
-			$this,
-			'load_plugin_textdomain',
-		) );
+		add_action(
+			'init',
+			array(
+				$this,
+				'load_plugin_textdomain',
+			)
+		);
 
-		add_action( 'admin_notices', array(
-			$this,
-			'theme_support_missing_notice',
-		) );
+		add_action(
+			'admin_notices',
+			array(
+				$this,
+				'theme_support_missing_notice',
+			)
+		);
 	}
 
 	/**
@@ -147,9 +156,9 @@ final class Spacious_Toolkit {
 	 */
 	private function is_request( $type ) {
 		switch ( $type ) {
-			case 'admin' :
+			case 'admin':
 				return is_admin();
-			case 'frontend' :
+			case 'frontend':
 				return ( ! is_admin() || defined( 'DOING_AJAX' ) ) && ! defined( 'DOING_CRON' );
 		}
 	}
@@ -164,16 +173,15 @@ final class Spacious_Toolkit {
 		/**
 		 * Core classes.
 		 */
-		include_once( SPT_ABSPATH . 'includes/functions-spacious-core.php' );
-		include_once( SPT_ABSPATH . 'includes/functions-spacious-elementor.php' );
-		include_once( SPT_ABSPATH . 'includes/class-spacious-autoloader.php' );
-		include_once( SPT_ABSPATH . 'includes/class-spacious-toolkit-install.php' );
-		include_once( SPT_ABSPATH . 'includes/class-spacious-ajax.php' );
+		include_once SPT_ABSPATH . 'includes/functions-spacious-core.php';
+		include_once SPT_ABSPATH . 'includes/functions-spacious-elementor.php';
+		include_once SPT_ABSPATH . 'includes/class-spacious-autoloader.php';
+		include_once SPT_ABSPATH . 'includes/class-spacious-toolkit-install.php';
+		include_once SPT_ABSPATH . 'includes/class-spacious-ajax.php';
 
 		if ( $this->is_request( 'admin' ) ) {
-			include_once( SPT_ABSPATH . 'includes/admin/class-spacious-admin.php' );
+			include_once SPT_ABSPATH . 'includes/admin/class-spacious-admin.php';
 		}
-
 	}
 
 	/**
@@ -263,5 +271,4 @@ final class Spacious_Toolkit {
 	public function ajax_url() {
 		return admin_url( 'admin-ajax.php', 'relative' );
 	}
-
 }

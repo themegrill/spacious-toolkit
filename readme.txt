@@ -2,8 +2,8 @@
 Contributors: themegrill
 Tags: theme, spacious, toolkit, themegrill
 Requires at least: 4.5
-Tested up to: 5.9
-Stable tag: 1.0.5
+Tested up to: 6.7
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -27,6 +27,8 @@ Get free support at http://themegrill.com/support-forum/
 * The plugin currently only supports Spacious theme.
 
 == Changelog ==
+== 1.0.6 - 22-01-2025 ==
+* Tweak - Updated `Tested up to` to 6.7.
 
 == 1.0.5 - 03-28-2022 ==
 * Fix - _register_controls is deprecated.
