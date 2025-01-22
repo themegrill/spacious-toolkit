@@ -13,7 +13,7 @@ jobs:
       run: |
         rm -rf node-modules
         rm -rf package-lock.json
-        npm install
+        npm install --force
         npm run build
     - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@stable
