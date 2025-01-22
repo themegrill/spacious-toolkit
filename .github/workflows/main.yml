@@ -11,6 +11,8 @@ jobs:
     - uses: actions/checkout@master
     - name: Build
       run: |
+        rm -rf node-modules
+        rm -rf package-lock.json
         npm install
         npm run build
     - name: WordPress Plugin Deploy
